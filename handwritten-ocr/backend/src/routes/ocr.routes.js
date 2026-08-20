@@ -1,23 +1,37 @@
 import express from "express";
 
 import {
-  upload
-} from "../middleware/upload.middleware.js";
-
-import {
-  handwrittenOCR
+    runOCR,
+    getOCRHistory,
+    getOCRById
 } from "../controllers/ocr.controller.js";
+
+import { upload } from "../middleware/upload.middleware.js";
+
 
 
 const router =
-  express.Router();
+    express.Router();
 
-
+// Upload + OCR + MongoDB
 router.post(
-  "/",
-  upload.single("image"),
-  handwrittenOCR
+    "/",
+    upload.single("image"),
+    runOCR
 );
+
+// Get all OCR results
+router.get(
+    "/history",
+    getOCRHistory
+);
+
+// Get one OCR result
+router.get(
+    "/:id",
+    getOCRById
+);
+
 
 
 export default router;

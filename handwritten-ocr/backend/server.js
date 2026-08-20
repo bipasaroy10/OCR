@@ -28,7 +28,7 @@ app.listen(
 
     console.log(
       `OCR: ${
-        process.env.UNLIMITED_OCR_URL
+        process.env.OCR_API_URL
       }`
     );
 

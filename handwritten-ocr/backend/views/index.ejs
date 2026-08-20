@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    <%= title %>
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="/css/style.css"
+  >
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+
+  <nav class="navbar">
+
+    <div class="navbar-inner">
+
+      <div class="brand">
+
+        <div class="brand-icon">
+          ✦
+        </div>
+
+        <div>
+
+          <h1>
+            Handwritten OCR
+          </h1>
+
+          <span>
+            AI-powered text recognition
+          </span>
+
+        </div>
+
+      </div>
+
+      <div class="status">
+
+        <span class="status-dot"></span>
+
+        OCR Engine Online
+
+      </div>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Main -->
+
+  <main class="container">
+
+    <section class="hero">
+
+      <span class="badge">
+        POWERED BY UNLIMITED-OCR
+      </span>
+
+      <h2>
+        Turn handwritten notes
+        <span>into digital text.</span>
+      </h2>
+
+      <p>
+        Upload handwritten images or PDF documents
+        and extract their text using AI.
+      </p>
+
+    </section>
+
+
+    <!-- Upload -->
+
+    <section class="upload-card">
+
+      <form
+        id="ocrForm"
+        enctype="multipart/form-data"
+      >
+
+        <div
+          class="drop-zone"
+          id="dropZone"
+        >
+
+          <input
+            type="file"
+            id="fileInput"
+            name="image"
+            accept=".jpg,.jpeg,.png,.webp,.pdf"
+          >
+
+          <div
+            class="upload-icon"
+          >
+            ↑
+          </div>
+
+          <h3>
+            Drop your file here
+          </h3>
+
+          <p>
+            or
+            <button
+              type="button"
+              id="browseButton"
+              class="browse-button"
+            >
+              browse files
+            </button>
+          </p>
+
+          <div class="supported">
+
+            <span>JPG</span>
+            <span>JPEG</span>
+            <span>PNG</span>
+            <span>WEBP</span>
+            <span>PDF</span>
+
+          </div>
+
+          <small>
+            Maximum file size: 50 MB
+          </small>
+
+        </div>
+
+
+        <!-- Selected file -->
+
+        <div
+          id="filePreview"
+          class="file-preview hidden"
+        >
+
+          <div class="file-icon">
+            📄
+          </div>
+
+          <div class="file-details">
+
+            <strong id="fileName">
+              filename.pdf
+            </strong>
+
+            <span id="fileSize">
+              0 MB
+            </span>
+
+          </div>
+
+          <button
+            type="button"
+            id="removeFile"
+            class="remove-button"
+          >
+            ×
+          </button>
+
+        </div>
+
+
+        <!-- Submit -->
+
+        <button
+          type="submit"
+          id="processButton"
+          class="process-button"
+          disabled
+        >
+
+          <span id="buttonText">
+            Extract Text
+          </span>
+
+          <span
+            id="loader"
+            class="loader hidden"
+          ></span>
+
+        </button>
+
+      </form>
+
+    </section>
+
+
+    <!-- Processing -->
+
+    <section
+      id="processing"
+      class="processing hidden"
+    >
+
+      <div class="processing-spinner"></div>
+
+      <h3>
+        Processing your document
+      </h3>
+
+      <p>
+        Unlimited-OCR is analyzing your handwriting.
+      </p>
+
+      <small>
+        Large PDFs may take several minutes.
+      </small>
+
+    </section>
+
+
+    <!-- Result -->
+
+    <section
+      id="resultSection"
+      class="result-card hidden"
+    >
+
+      <div class="result-header">
+
+        <div>
+
+          <span class="result-label">
+            OCR RESULT
+          </span>
+
+          <h3>
+            Extracted Text
+          </h3>
+
+        </div>
+
+        <div class="result-actions">
+
+          <button
+            id="copyButton"
+            class="secondary-button"
+          >
+            Copy
+          </button>
+
+          <button
+            id="downloadButton"
+            class="secondary-button"
+          >
+            Download
+          </button>
+
+        </div>
+
+      </div>
+
+
+      <div class="result-meta">
+
+        <span id="resultFile">
+          File
+        </span>
+
+        <span id="resultType">
+          Type
+        </span>
+
+      </div>
+
+
+      <textarea
+        id="ocrResult"
+        readonly
+      ></textarea>
+
+    </section>
+
+
+    <!-- Error -->
+
+    <section
+      id="errorSection"
+      class="error-card hidden"
+    >
+
+      <strong>
+        OCR Failed
+      </strong>
+
+      <p id="errorMessage"></p>
+
+    </section>
+
+
+    <!-- Info -->
+
+    <section class="info-grid">
+
+      <div class="info-card">
+
+        <div class="info-number">
+          01
+        </div>
+
+        <h3>
+          Upload
+        </h3>
+
+        <p>
+          Upload a handwritten image or PDF
+          document.
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-number">
+          02
+        </div>
+
+        <h3>
+          Analyze
+        </h3>
+
+        <p>
+          The AI model processes the document
+          using your GPU.
+        </p>
+
+      </div>
+
+
+      <div class="info-card">
+
+        <div class="info-number">
+          03
+        </div>
+
+        <h3>
+          Extract
+        </h3>
+
+        <p>
+          Get the recognized text and copy or
+          download it.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      Handwritten OCR · Node.js · Express.js · EJS · Unlimited-OCR
+    </p>
+
+  </footer>
+
+
+  <script src="/js/app.js"></script>
+
+</body>
+
+</html>

@@ -1,124 +1,100 @@
 import express from "express";
-import cors from "cors";
+import dotenv from "dotenv";
+import path from "path";
 
-import ocrRoutes
-  from "./src/routes/ocr.routes.js";
+import { connectDB } from "./src/config/db.js";
+import ocrRoutes from "./src/routes/ocr.routes.js";
 
+dotenv.config();
 
-const app =
-  express();
+const app = express();
 
+app.set("view engine", "ejs");
 
-app.use(
-  cors()
+app.set(
+    "views",
+    path.join(process.cwd(), "views")
 );
 
+const PORT =
+    process.env.PORT || 5000;
+
+// ============================================================
+// DATABASE
+// ============================================================
+
+await connectDB();
+
+// ============================================================
+// MIDDLEWARE
+// ============================================================
 
 app.use(
-  express.json()
+    express.json()
 );
-
 
 app.use(
-  express.urlencoded({
-    extended: true
-  })
+    express.urlencoded({
+        extended: true
+    })
 );
 
+// ============================================================
+// STATIC FILES
+// ============================================================
 
-// --------------------------------------------------
-// Health
-// --------------------------------------------------
+app.use(
+    express.static(
+        path.resolve("public")
+    )
+);
 
-app.get(
-  "/",
-  (req, res) => {
-
-    res.json({
-
-      success: true,
-
-      message:
-        "Handwritten OCR Node.js API is running."
-
+app.get("/", (req, res) => {
+    res.render("index", {
+        title: "Handwritten OCR"
     });
-
-  }
-);
-
-
-app.get(
-  "/health",
-  (req, res) => {
-
-    res.json({
-
-      success: true,
-
-      service:
-        "Node.js OCR API",
-
-      pythonOCR:
-        process.env.UNLIMITED_OCR_URL
-
-    });
-
-  }
-);
-
-
-// --------------------------------------------------
-// OCR
-// --------------------------------------------------
+});
+// ============================================================
+// OCR ROUTES
+// ============================================================
 
 app.use(
-  "/api/ocr",
-  ocrRoutes
+    "/api/ocr",
+    ocrRoutes
 );
 
+// ============================================================
+// SERVER
+// ============================================================
 
-// --------------------------------------------------
-// Error handler
-// --------------------------------------------------
+app.listen(
+    PORT,
+    () => {
 
-app.use(
-  (err, req, res, next) => {
+        console.log(
+            "=========================================="
+        );
 
-    console.error(
-      "Express Error:",
-      err
-    );
+        console.log(
+            "Handwritten OCR Node.js API"
+        );
 
+        console.log(
+            `Server: http://localhost:${PORT}`
+        );
 
-    if (
-      err.code ===
-      "LIMIT_FILE_SIZE"
-    ) {
+        console.log(
+            `OCR: ${process.env.OCR_API_URL}`
+        );
 
-      return res.status(400).json({
+        console.log(
+            "MongoDB: Connected"
+        );
 
-        success: false,
-
-        message:
-          "File size cannot exceed 50 MB."
-
-      });
-
+        console.log(
+            "=========================================="
+        );
     }
-
-
-    return res.status(500).json({
-
-      success: false,
-
-      message:
-        err.message ||
-        "Internal server error."
-
-    });
-
-  }
 );
-
 
 export default app;
