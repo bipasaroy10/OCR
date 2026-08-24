@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "OCR completed successfully.",
+  "data": {
+    "originalName": "image_003.jpeg",
+    "fileSize": 390676,
+    "mimeType": "application/octet-stream",
+    "ocrText": "Channel\nTEP\nMinic → 20 bytes (Job key extra feature use might be value high)\nMax → 60 bytes (Job extra features ex→ window scaling).\nUDP.\n8 bytes me 4 components, each of 2 bytes.\n① source port\n② Destination port\n③ Total length\n④ checksum\n![](images/0.jpg)\n\n(4) Sliding window protocol and flow control\nFlow Control → Flow control is a mechanism to balance the data exchange by the fast producer (sender) and a slow consumer (receiver).\nSliding window: → If is an dynamic mechanism. In this both sender and receiver has a common \"window\" which tracks the packets sequence number.\nWorking\nwindow size → Time window size fixed right hot hair. Use receiver\nwindow kente hein.\nSliding → Tab senders packets bhej ta hair over receiver is ack.\nmill jota hai, John window age slide kari jake ha taaki\nmaye packets bheje ja sakesin.\nBuffering → Receiver apnea buffer size ke mutabig window size advertise\nkenta hai. Agn buffer full → window size O. → sender stops sending data.",
+    "pageCount": 1,
+    "model": "baidu/Unlimited-OCR",
+    "createdAt": "2026-08-24T05:58:00.416060+00:00",
+    "_id": "6a8bdd682512538e30818a80"
+  }
+}

@@ -1,0 +1,6 @@
+image_id,category,difficulty,language,has_numbers,image_quality
+image_001,paragraph,easy,english,no,good
+image_002,paragraph,medium,english,no,good
+image_003,notes,difficult,english,yes,good
+image_004,notes,medium,english,no,poor
+image_005,mixed,difficult,english,yes,medium

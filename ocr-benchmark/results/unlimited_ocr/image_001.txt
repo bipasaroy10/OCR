@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "OCR completed successfully.",
+  "data": {
+    "originalName": "image_001.jpeg",
+    "fileSize": 477227,
+    "mimeType": "application/octet-stream",
+    "ocrText": "Step 2: → SYN + ACK. Server request receive karts hai an response\nbhejta hai. Yeh do kaam karta hai.\n\nStep 3: → SYN → Client ke SYN ko acknowledge karts hai.\n(ack = x+1).\n\nStep 3: → ACK: Client had ka roundom req. no bhejta hai.\n(seq = y).\n\nStep 3: → ACK: Client final eck bhejta hai (ack=y+1).\nA1 connection Established state mein ca\njata hai aw data transfer shuru hejata hai.\n\nStep 4: Connection Terminal (four-way landslide)\n\nConnection close kame ke live 4 steps logit hein kyunk' TCP\nFull duplex hai done sides se alg alg close kama penta hai).\n\nStep 5: FIN(Finish) → Job client ka data knotam he jata hai\nwon e k FIN segment bhejta hai. Eke\nmattakb \"Maine apna data bhej diya, mein\nclose kara naha hu\".\n\nStep 6: ACK → Server is FIN ko acknowledge kanta hai.\nAb client-to-server fine close ho geysf hai.\nlekin server aohi bhi data bhej saka hai\nEse half - close kehte nein).\n\nStep 7: FIN → Tab server ka bhi team ho jata hai, teh woh bhi\nFIN bhejta hai.\n\nStep 8: ACK → Client last ack bhejta hai, kuch den wait kame\nke baad (Time-wait state) connection pui tanah\nse terminate ho jata hai.\n\nClient hamisha Active Open kenta hai & server 'Passive open kenta\nha.",
+    "pageCount": 1,
+    "model": "baidu/Unlimited-OCR",
+    "createdAt": "2026-08-24T05:56:38.429344+00:00",
+    "_id": "6a8bdd162512538e30818a7e"
+  }
+}

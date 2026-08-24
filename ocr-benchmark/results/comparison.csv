@@ -1,0 +1,9 @@
+image_id,model,CER_%,WER_%,character_accuracy_%,exact_match,latency_seconds,ground_truth_length,prediction_length
+image_001,Gemini,19.27,28.57,80.73,False,76.0926,1199,1167
+image_002,Gemini,14.93,31.47,85.07,False,27.3283,1206,1149
+image_003,Gemini,21.86,43.59,78.14,False,27.9623,1052,994
+image_004,Gemini,26.2,48.37,73.8,False,11.8986,1080,1003
+image_001,Unlimited-OCR,55.88,74.88,44.12,False,29.3375,1199,1557
+image_002,Unlimited-OCR,61.28,60.91,38.72,False,54.4986,1206,1625
+image_003,Unlimited-OCR,54.47,65.38,45.53,False,27.1489,1052,1347
+image_004,Unlimited-OCR,59.35,78.43,40.65,False,30.2749,1080,1276

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Handwritten OCR</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ================================================= -->
+    <!-- HEADER -->
+    <!-- ================================================= -->
+
+    <header class="header">
+
+        <div>
+
+            <h1>Handwritten OCR</h1>
+
+            <p>
+                Convert handwritten images and PDF files
+                into editable text using AI.
+            </p>
+
+        </div>
+
+        <span
+            id="serverStatus"
+            class="status offline"
+        >
+            Checking...
+        </span>
+
+    </header>
+
+
+    <!-- ================================================= -->
+    <!-- UPLOAD SECTION -->
+    <!-- ================================================= -->
+
+    <section class="upload-card">
+
+        <h2>Upload Document</h2>
+
+        <p class="subtitle">
+            Upload JPG, JPEG, PNG, WEBP, BMP or PDF
+        </p>
+
+
+        <div
+            id="dropZone"
+            class="drop-zone"
+        >
+
+            <div class="upload-icon">
+                📄
+            </div>
+
+            <h3>
+                Drag & Drop your file here
+            </h3>
+
+            <p>
+                or
+            </p>
+
+            <label
+                for="fileInput"
+                class="browse-button"
+            >
+                Browse File
+            </label>
+
+            <input
+                type="file"
+                id="fileInput"
+                accept=".jpg,.jpeg,.png,.webp,.bmp,.pdf"
+                hidden
+            >
+
+            <p
+                id="selectedFile"
+                class="selected-file"
+            >
+                No file selected
+            </p>
+
+        </div>
+
+
+        <button
+            id="ocrButton"
+            class="ocr-button"
+            disabled
+        >
+            Run OCR
+        </button>
+
+
+        <!-- Loading -->
+
+        <div
+            id="loading"
+            class="loading hidden"
+        >
+
+            <div class="spinner"></div>
+
+            <p>
+                Processing OCR...
+            </p>
+
+            <small>
+                Large PDF files may take some time.
+            </small>
+
+        </div>
+
+
+        <!-- Error -->
+
+        <div
+            id="errorMessage"
+            class="error hidden"
+        ></div>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- OCR RESULT -->
+    <!-- ================================================= -->
+
+    <section
+        id="resultSection"
+        class="result-card hidden"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>OCR Result</h2>
+
+                <p id="resultFileName"></p>
+
+            </div>
+
+            <div class="result-actions">
+
+                <button
+                    id="copyButton"
+                    class="secondary-button"
+                >
+                    📋 Copy
+                </button>
+
+                <button
+                    id="downloadButton"
+                    class="secondary-button"
+                >
+                    💾 Download
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-info">
+
+            <span>
+                Pages:
+                <strong id="pageCount">-</strong>
+            </span>
+
+            <span>
+                Model:
+                <strong id="modelName">-</strong>
+            </span>
+
+        </div>
+
+
+        <textarea
+            id="ocrText"
+            readonly
+            placeholder="OCR text will appear here..."
+        ></textarea>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- HISTORY -->
+    <!-- ================================================= -->
+
+    <section class="history-card">
+
+        <div class="section-header">
+
+            <div>
+
+                <h2>OCR History</h2>
+
+                <p>
+                    Previously processed documents
+                </p>
+
+            </div>
+
+            <button
+                id="refreshHistory"
+                class="secondary-button"
+            >
+                🔄 Refresh
+            </button>
+
+        </div>
+
+
+        <!-- Search -->
+
+        <input
+            type="text"
+            id="historySearch"
+            class="search-input"
+            placeholder="Search OCR history..."
+        >
+
+
+        <div
+            id="historyContainer"
+            class="history-container"
+        >
+
+            <p class="empty">
+                Loading history...
+            </p>
+
+        </div>
+
+    </section>
+
+</div>
+
+
+<script src="/static/js/app.js"></script>
+
+</body>
+
+</html>

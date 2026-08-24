@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "OCR completed successfully.",
+  "data": {
+    "originalName": "image_004.jpeg",
+    "fileSize": 430998,
+    "mimeType": "application/octet-stream",
+    "ocrText": "1\n• HELEN (headon length) \"yeh 4 bit ka field nota hai.\n• logic : header-size - HELEN × 4 bytes\n- Aqr +ILEN value → ha +oh → 5×4 = 20 bytes (min)\nsize\n- Aqr +ILEN value 15 (f) hai, +oh → 15×4 = 60 bytes (max)\nsize\n⑤ Numerical Rules / window sizes)\nSequence no. age 'm'-bits kei hai.\nGBN → sendin window size (max) 2\\( ^{m} \\) - 1\nReceive window 1. hota hai.\nselective Repeat →\nsame for both (size).\n2\\( ^{m-1} \\)\n⑧. SCTP (stream control transmission protocol) UDP and\n• TCP ka mixture hai o.\n- Multi-Homing → Ek hi connection ke fiye multiple IP addresses use kan sakta hai.\n- Multi-streaming → Ek hi connection along along streams bhej sakta hai bima ek duore ko block kige.\n- Association → Isme connection ko association kane him\n- SETP Ack → ISME batata hei, ki kansa data miss hua hai.\nEx:- Using WIF1 and 5h . One stops then other will automatically starts without disturbing the connection .",
+    "pageCount": 1,
+    "model": "baidu/Unlimited-OCR",
+    "createdAt": "2026-08-24T05:58:30.695016+00:00",
+    "_id": "6a8bdd862512538e30818a81"
+  }
+}

@@ -1,0 +1,24 @@
+• HLEN (Header length): Yeh 4 bit ka field hota hai.
+   • Logic : Header-Size = HLEN x 4 bytes.
+   • Agr HLEN value 5 hai toh -> 5 x 4 = 20 bytes (min size)
+   • Agr HLEN value 15 (F) hai, toh -> 15 x 4 = 60 bytes (max size)
+
+5 Numerical Rules (Window sizes)
+    Sequence no. agr 'm'-bits ka hai.
+    GBN -> Sender window size (max) = 2^m - 1
+            Receiver window 1 hota hai.
+
+    Selective Repeat ->
+            Same for both (size).
+            2^(m-1)
+
+6 SCTP (Stream Control Transmission Protocol) UDP and
+   TCP ka mixture hai.
+  • Multihoming -> Ek hi connection ke liye multiple IP addresses
+                   use kar sakta hai.
+  • Multi-streaming -> Ek hi connection alag alag streams bhej
+                       sakta hai bina ek dusre ko block kiye.
+  • Association -> Isme connection ko "association" kehte hain
+  • SCTP ACK -> Isme batata hai ki konsa data miss hua hai.
+Ex:- Using WIFI and 5G . One stops then other will
+     automatically starts without disturbing the connection.

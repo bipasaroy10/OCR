@@ -1,0 +1,40 @@
+Channel
+
+Highly Likely:
+
+Home address + room number.
+
+1 Socket Addressing: It is the combination of IP address
+and a port number
+Ex: 122. 45. 12. 7 : 80 (80 port number)
+
+2 Why use Port numbers instead of Process IDs . ? (PIDs)
+
+• Portability -> Process IDs change every time an app restarts,
+but well known ports (like 80 for HTTP) stay
+the same .
+
+• Diff OS -> Windows ka PID format alag ho sakta hai, linux
+ka alag. Port no. duniya mein universal standard
+hain.
+
+3 TCP Congestion Control (Traffic Management)
+
+• Slow start -> At first, TCP darta hai, isliye CWND = 1
+segment se shuru karta hai. aur RTT (Round
+Trip Time) par usse double karta hai (2, 4, 8, 16...)
+
+• Congestion avoidance -> Jab ek limit (threshold) aa jata hai, toh
+ye darne lagta hai aur speed slow kar deta
+hai. Ab ye sirf +1 badhata hai. (17, 18, 19)...
+
+• Congestion Detection -> Agar koi packet loss hua, toh TCP ko lagta hai
+"Traffic jam ho gaya", woh apni window
+size ko aadha (half) kar deta hai taaki
+network par load kam ho jaye.
+
+4 TCP Header (Hex dump identification)
+hex value -> E293 0017....
+
+Source port -> First 2 bytes. (E293)
+Destination -> Agle 2 bytes (0017)

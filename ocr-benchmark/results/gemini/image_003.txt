@@ -1,0 +1,36 @@
+Channel
+
+TCP
+Mini -> 20 bytes (Jab Koi extra feature use nahi ho raha hai)
+Max -> 60 bytes (Jab extra features ex -> window scaling)
+
+UDP.
+8 bytes me 4 components, each of 2 bytes,
+(1) Source port
+(2) Destination port
+(3) Total length
+(4) Checksum
+
+[ 0 | 1 | 2 | 3 | 4 | 5 . ]
+
+(17) Sliding window protocol and Flow control
+
+Flow Control -> Flow control is a mechanism to balance the
+data exchange btw fast producer (sender) and
+a slow consumer (receiver).
+
+Sliding window: -> It is an dynamic mechanism. In this both
+sender and receiver has a common "window" which
+tracks the packets sequence number.
+
+Working :
+Window Size: -> Isme window size fixed nahi hota hai. Ise receiver
+window kehte hain.
+
+Sliding -> Jab senders packets bhejta hai aur receiver se ack.
+mil jata hai, toh window aage slide kar jati ha taaki
+naye packets bheje Ja sakein.
+
+Buffering -> Receiver apne buffer size ke mutabiq window size advertise
+karta hai. Agr buffer full -> window size 0. -> sender stops sending
+data.

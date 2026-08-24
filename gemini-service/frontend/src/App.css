@@ -1,0 +1,157 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f7fb;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 50px 20px;
+}
+
+.container {
+  width: 100%;
+  max-width: 850px;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  text-align: center;
+  color: #5882eb;
+  margin-bottom: 35px;
+}
+
+.upload-section {
+  display: flex;
+  justify-content: center;
+}
+
+.upload-box {
+  width: 100%;
+  min-height: 280px;
+  border: 2px dashed #aaa;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
+  background: #fafafa;
+}
+
+.upload-box:hover {
+  border-color: #555;
+}
+
+.upload-icon {
+  font-size: 50px;
+  margin-bottom: 15px;
+}
+
+.upload-box p {
+  margin: 5px;
+  font-size: 18px;
+}
+
+.upload-box span {
+  color: #777;
+  font-size: 14px;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 350px;
+  object-fit: contain;
+}
+
+.file-name {
+  text-align: center;
+  margin-top: 15px;
+  color: #5068c6;
+}
+
+.extract-button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 14px;
+  border: none;
+  border-radius: 8px;
+  background: #184fc7;
+  color: rgb(243, 245, 249);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.extract-button:hover {
+  background: #799ee8;
+}
+
+.extract-button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
+
+.error {
+  margin-top: 20px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f5bcbc;
+  color: #b00020;
+}
+
+.result-section {
+  margin-top: 35px;
+}
+
+.result-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.result-header h2 {
+  margin: 0;
+}
+
+.copy-button {
+  padding: 9px 15px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #e5e7eb;
+}
+
+.copy-button:hover {
+  background: #d1d5db;
+}
+
+.result-text {
+  width: 100%;
+  min-height: 300px;
+  margin-top: 15px;
+  padding: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  resize: vertical;
+  font-size: 16px;
+  line-height: 1.6;
+}

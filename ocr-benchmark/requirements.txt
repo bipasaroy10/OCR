@@ -1,0 +1,7 @@
+requests
+pandas
+python-Levenshtein
+jiwer
+openpyxl
+matplotlib
+python-dotenv

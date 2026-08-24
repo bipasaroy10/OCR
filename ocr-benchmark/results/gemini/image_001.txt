@@ -1,0 +1,37 @@
+Step 2: -> SYN + ACK : Server request receive karta hai aur response
+bhejta hai. Yeh do kaam karta hai.
+
+1 ACK -> Client ke SYN ko acknowledge karta hai
+(ack = x + 1).
+
+2 SYN -> Apna khud ka random seq. no. bhejta hai.
+(seq = y).
+
+Step-3: -> ACK : Client final ek ACK bhejta hai (ack=y+1).
+Ab connection Established state mein aa
+jata hai aur data transfer shuru hojata hai.
+
+TCP Connection Terminal (Four-way Handshake)
+
+Connection close karne ke liye 4 steps lagte hain kyunki TCP
+Full duplex hai (dono sides se alag alag close karna padta hai).
+
+Step-1: FIN (Finish) -> Jab client ka data khatam ho jata hai
+woh ek FIN segment bhejta hai. Iska
+matlab "Maine apna data bhej diya, mein
+close kar raha hu".
+
+Step-2: ACK -> Server is FIN ko acknowledge karta hai.
+Ab client-to-server line close ho gaya hai.
+lekin server abhi bhi data bhej sakta hai
+(Ise half-close kehte hain).
+
+Step-3: FIN -> Jab server ka bhi kaam ho jata hai, toh woh bhi
+FIN bhejta hai.
+
+Step-4: ACK -> Client last ack bhejta hai. Kuch der wait karne
+ke baad (Time-wait state) connection puri tarah
+se terminate ho jata hai.
+
+Client hamesha Active Open karta hai & Server 'Passive open karta
+hai.

@@ -1,0 +1,14 @@
+{
+  "success": true,
+  "message": "OCR completed successfully.",
+  "data": {
+    "originalName": "image_002.jpeg",
+    "fileSize": 411763,
+    "mimeType": "application/octet-stream",
+    "ocrText": "Channel\nHighly likely: Home address\n① socket Addressing: If its the combination of IP address and a port number\nEx: 122.45.12.7:80 (80 ports member)\n② why use Port numbers instead of Process IDs? (PIDs)\n- Portability → Process IDs change every 4-time an app system, but well known ports (like 80 for HTTP) stay\n- Diff: As → Windows: kai PID format along ho sakta hot, linux ka alag. Port no. duniya mein universal standard hain.\n③ TCP Congestion Control (Traffic Management)\n- slow start → At first, TEP data hai, isiye (WND = 1 segment se shuun kanta hai. aow RTT (Round Toip Tim) pan use double kanta hai(2,4,8,16...)\n- Cogestion avoidance → Jab ek limit (threshold) aa iota hai, toh ye clame lagta hei our speech slow kar data hai. Ab ye sir+1 badhata hei. (17,18,19?)\n- Cogestion Detection → Ago koi packet loss huq, toh rep ko lagta hai\n\"Teraific jam ho gaya, won apmn window\nsize ko aadha (half) kar deita hai faaki\nnetwork par load kam ho jaye.\nTCP Header. (Hex dump /dontification)\nhex value → E29.3 0017...\nSurno post → First 2 bytes. (E293)\nDestination → Angle 2 bytes (00#)\nELM: 5m\n• HLE\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。\n。",
+    "pageCount": 1,
+    "model": "baidu/Unlimited-OCR",
+    "createdAt": "2026-08-24T05:57:33.268062+00:00",
+    "_id": "6a8bdd4d2512538e30818a7f"
+  }
+}
