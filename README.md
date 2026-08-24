@@ -937,13 +937,5 @@ GitHub:
 
 [https://github.com/bipasaroy10](https://github.com/bipasaroy10)
 
-```
-
-### One recommendation before you commit this
-
-Your repository's current README appears to contain **placeholder OCR output text** and an older API-response example, rather than the benchmark documentation above. :contentReference[oaicite:2]{index=2} Replacing it with the README above will make the repository much easier for a recruiter, interviewer, or evaluator to understand.
-
-Also, **don't describe the 79.44% vs 42.26% result as a universal conclusion**. Your current experiment has only four images, so the README correctly frames it as an initial benchmark. The next major improvement would be getting this to **50–100 handwritten images** and then adding graphs to the README.
-```
 
 [1]: https://github.com/bipasaroy10/OCR "GitHub - bipasaroy10/OCR · GitHub"
